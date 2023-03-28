@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+<body>
+    <button onclick="Maior();">MAIOR VALOR</button>
+    <button onclick="Menor();">MENOR VALOR</button>
+    <button onclick="Media();">MÉDIA VALOR</button>
+    
+</body>
+<script>
+//Variável global (fora das funções)
+ alturas = [0,0,0,0,0]; 
+ for(cont=0;cont<=4;cont++)
+ {
+    n = prompt("Digite um número:" + (cont+1));
+    n = parseInt(n); // Convertemos para inteiro
+    alturas[cont] = n;
+ }
+//posição-> 0 1 2 3 4
+function Maior()
+{ 
+    maior = alturas[0];
+    for(cont=0;cont<=4;cont++) //cont vai de 0 a 4
+    {
+        if(maior < alturas[cont])
+        {
+            maior = alturas[cont];
+        }
+    }
+    alert(maior); //cria um alerta
+}
+function Menor()
+{
+    menor = alturas[0];
+    for(cont=0;cont>=4;cont++) //cont vai de 0 a 4
+    {
+        if(menor > alturas[cont])
+        {
+            menor = alturas[cont];
+        }
+    }
+    alert(menor); //cria um alerta
+}
+function Media()
+{
+    soma = 0;
+    media = 0;
+    for (cont=0;cont<=4;cont++)
+    {
+        soma = soma + alturas[cont];
+    }
+    media = soma / 5
+    alert("A média é: " + media); //cria um alerta
+}
+
+</script>
+</html>
